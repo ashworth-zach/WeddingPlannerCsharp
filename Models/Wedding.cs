@@ -13,7 +13,7 @@ namespace weddingplanner.Models
         public override bool IsValid(object value)
         {
             var dt = (DateTime)value;
-            if (dt <= DateTime.Now)
+            if (dt >= DateTime.Now)
             {
                 return true;
             }
