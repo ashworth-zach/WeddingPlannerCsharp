@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h1 class="jumbotron text-center bg-primary">Login Here</h1>
+    <a href="/">HOME</a>
+    <div class="container">
+        <div class="row">
+            @model LoginRegisterViewModel
+
+            <!-- // No ".cshtml" -->
+            <div class="col-sm-6">
+                <form action="/Register" method="post">
+
+                    <span asp-validation-for="@Model.UserReg.firstname"></span>
+                    <label asp-for="@Model.UserReg.firstname">firstname</label>
+                    <input asp-for="@Model.UserReg.firstname"><br>
+                    <span asp-validation-for="@Model.UserReg.lastname"></span>
+                    <label asp-for="@Model.UserReg.lastname">lastname</label>
+                    <input asp-for="@Model.UserReg.lastname"><br>
+                    <span asp-validation-for="@Model.UserReg.email"></span>
+                    <label asp-for="@Model.UserReg.email">email</label>
+                    <input asp-for="@Model.UserReg.email"><br>
+                    <span asp-validation-for="@Model.UserReg.password"></span>
+                    <label asp-for="@Model.UserReg.password">password</label>
+                    <input asp-for="@Model.UserReg.password"><br>
+                    <span asp-validation-for="@Model.UserReg.Confirm"></span>
+                    <label asp-for="@Model.UserReg.Confirm">Confirm</label>
+                    <input asp-for="@Model.UserReg.Confirm"><br>
+                    <input value="Register" type="submit">
+
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <form action="/SubmitLogin" method="post">
+                    <span asp-validation-for="@Model.UserLog.logemail"></span>
+                    <label asp-for="@Model.UserLog.logemail">email</label>
+                    <input asp-for="@Model.UserLog.logemail"><br>
+                    <span asp-validation-for="@Model.UserLog.logpassword"></span>
+                    <label asp-for="@Model.UserLog.logpassword">password</label>
+                    <input asp-for="@Model.UserLog.logpassword"><br>
+                    <input value="Login" type="submit">
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>
